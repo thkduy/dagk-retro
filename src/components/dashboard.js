@@ -22,6 +22,7 @@ export default function AutoGrid() {
     // Note: the empty deps array [] means
     // this useEffect will run once
     // similar to componentDidMount()
+    //check
     useEffect(() => {
         fetch("https://dagk-retro-api.herokuapp.com/dashboard")
             .then(res => res.json())
