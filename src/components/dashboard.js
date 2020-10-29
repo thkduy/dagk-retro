@@ -23,7 +23,7 @@ export default function AutoGrid() {
     // this useEffect will run once
     // similar to componentDidMount()
     useEffect(() => {
-        fetch("http://localhost:3001/")
+        fetch("https://dagk-retro-api.herokuapp.com/dashboard")
             .then(res => res.json())
             .then(
                 (result) => {
