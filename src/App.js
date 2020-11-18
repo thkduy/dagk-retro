@@ -9,7 +9,7 @@ import ContextProvider from './context/withContext.js';
 
 import Dashboard from './components/dashboard.js';
 
-import Home from './components/Home.js';
+import Home from './components/home.js';
 
 import Login from './components/login.js';
 
