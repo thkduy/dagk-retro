@@ -22,7 +22,7 @@ export default function DashBoard() {
     useEffect(() => {
         async function fetchData(){
             const user = localStorage.getItem("user");
-            const url = "http://localhost:3001/dashboard/?id="+JSON.parse(user).id;
+            const url = "https://dagk-retro-api.herokuapp.com/dashboard/?id="+JSON.parse(user).id;
             const res = await fetch(url);
             try{
                 const result = await res.json();
@@ -59,7 +59,7 @@ export default function DashBoard() {
                     referrer: 'no-referrer',
                     body: JSON.stringify({ name: board_name, idUser: id}),
                 }
-                return fetch(`http://localhost:3001/createBoard`, options)
+                return fetch(`https://dagk-retro-api.herokuapp.com/createBoard`, options)
                 .then(response => {
                   if (!response.ok) {
                     throw new Error(response.statusText)
@@ -99,7 +99,7 @@ export default function DashBoard() {
             body: JSON.stringify({ id: item._id }),
         }
 
-        const res = await fetch(`http://localhost:3001/deleteBoard`, options);
+        const res = await fetch(`https://dagk-retro-api.herokuapp.com/deleteBoard`, options);
         if(res.ok){
             const result = await res.json();
             console.log(result);

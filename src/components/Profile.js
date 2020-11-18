@@ -68,7 +68,7 @@ export default function Register(){
             }),
         }
 
-        const response = await fetch(`http://localhost:3001/auth/edit`, options);
+        const response = await fetch(`https://dagk-retro-api.herokuapp.com/auth/edit`, options);
         const res = await response.json();
         if(response.ok){
             const user = jwt.decode(res.token);
