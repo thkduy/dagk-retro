@@ -13,7 +13,7 @@ import {
 import EditIcon from '@material-ui/icons/Edit';
 
 import Column from './Column';
-import Loading from '../components/loading.js';
+import Loading from './Loading.js';
 import Swal from 'sweetalert2';
 
 export default function Board() {

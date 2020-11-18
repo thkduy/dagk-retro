@@ -7,15 +7,15 @@ import {
 
 import ContextProvider from './context/withContext';
 
-import Dashboard from './components/dashboard';
+import Dashboard from './components/Dashboard';
 
-import Home from './components/home';
+import Home from './components/Home';
 
-import Login from './components/login';
+import Login from './components/Login';
 
-import Register from './components/register';
+import Register from './components/Register';
 
-import PublicBoard from './components/publicboard';
+import PublicBoard from './components/PublicBoard';
 
 import MenuAppBar from './components/AppBar';
 

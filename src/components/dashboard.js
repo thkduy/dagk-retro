@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {useHistory} from "react-router-dom";
-import Board from '../components/BoardItem.js';
+import Board from './BoardItem.js';
 import authUserContext  from '../context/context';
 import {
     Grid,
@@ -8,7 +8,7 @@ import {
     Container,
     Typography
 } from '@material-ui/core';
-import Loading from '../components/loading.js';
+import Loading from './Loading.js';
 import Swal from 'sweetalert2';
 
 export default function DashBoard() {
