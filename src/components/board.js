@@ -25,7 +25,7 @@ export default function Board() {
     //if boardData undefine (click link share)
     useEffect(()=>{
         async function fetchData(){
-            const url = "http://localhost:3001/board/" + id;
+            const url = "https://dagk-retro-api.herokuapp.com/board/" + id;
             const res = await fetch(url);
             try{
                 const result = await res.json();
@@ -70,7 +70,7 @@ export default function Board() {
             body: JSON.stringify({ id: id, newName: boardData.name }),
         }
 
-        await fetch(`http://localhost:3001/editBoardName`, options);
+        await fetch(`https://dagk-retro-api.herokuapp.com/editBoardName`, options);
         setIsEditName(false);
     }
     
