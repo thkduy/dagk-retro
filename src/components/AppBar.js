@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { useHistory } from "react-router-dom";
-import authUserContext  from '../context/context.js';
+import authUserContext  from '../context/context';
 
 const useStyles = makeStyles((theme) => ({
   root: {

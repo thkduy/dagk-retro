@@ -12,7 +12,7 @@ import {
 
 import EditIcon from '@material-ui/icons/Edit';
 
-import Column from './Column.js';
+import Column from './Column';
 import Loading from './Loading.js';
 import Swal from 'sweetalert2';
 
@@ -21,7 +21,7 @@ export default function Board() {
     const [isLoaded, setIsLoaded] = useState(location.boardData? true : false);
     const [boardData, setBoardData] = useState(location.boardData);
     const { id } = useParams();
-    const domain = "https://fastretro.herokuapp.com";
+    const domain = "http://localhost:3000";
     //if boardData undefine (click link share)
     useEffect(()=>{
         async function fetchData(){

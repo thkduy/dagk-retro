@@ -1,5 +1,5 @@
 import {React, useState, useContext } from "react";
-import authUserContext  from '../context/context.js';
+import authUserContext  from '../context/context';
 import Swal from 'sweetalert2';
 import jwt from "jsonwebtoken";
 import {
