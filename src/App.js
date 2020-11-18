@@ -18,7 +18,10 @@ import Register from './components/register';
 import PublicBoard from './components/publicboard';
 
 import MenuAppBar from './components/AppBar';
-import Board from "./components/Board";
+
+import Board from './components/Board';
+
+import Profile from './components/Profile';
 
 export default function App() {
     return (
@@ -32,7 +35,8 @@ export default function App() {
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
                         <Route path="/publicboard" component={PublicBoard} />
-                        <Route path="/board/:id" component={Board}/>
+                        <Route path="/board/:id" component={Board} />
+                        <Route path="/profile" component={Profile} />
                     </Switch>
                 </div>
             </ContextProvider>       

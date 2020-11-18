@@ -60,6 +60,11 @@ export default function MenuAppBar() {
     localStorage.removeItem("token");
     history.push("/");
   };
+  
+  const handleProfile = () => {
+    setAnchorEl(null);
+    history.push("/profile");
+  }
 
   const handleLogin = () => {
     history.push("/login");
@@ -110,7 +115,7 @@ export default function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleProfile}>Profile</MenuItem>
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
             </div>

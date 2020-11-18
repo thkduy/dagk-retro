@@ -122,10 +122,8 @@ export default function Board() {
                                         <EditIcon fontSize="small"/>
                                     </IconButton>
                                 </Box>
-                            </Typography>}
-                            
-                            
-                            
+                            </Typography>
+                        }  
                         </Grid>
                         <Grid item>
                             <Typography>
