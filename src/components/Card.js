@@ -11,7 +11,7 @@ import {
 
 } from "@material-ui/core";
 
-export default function CardItem({item, idCol}) {
+export default function CardItem({item, idCol, onClick}) {
     const [content, setContent] = useState(item.content);
     const [isEditName,setIsEditName] = useState(item.isEditing === undefined ? false : item.isEditing);
     const handleEdit = () => {
@@ -65,25 +65,6 @@ export default function CardItem({item, idCol}) {
         setIsEditName(false);
     }
 
-    const handleDelete = async () => {
-        const options = {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            redirect: 'follow',
-            referrer: 'no-referrer',
-            body: JSON.stringify({ idColumn: idCol, idCard: item._id }),
-        }
-
-        await fetch(`http://localhost:3001/deleteCard`, options);
-        setIsEditName(false);
-    }
-
-
     return(
         <Grid item>
             <Card variant="outlined">
@@ -124,7 +105,7 @@ export default function CardItem({item, idCol}) {
                             >
                                 Edit
                                     </Button>
-                            <Button variant="contained" color="secondary" onClick={handleDelete}>Delete</Button>
+                            <Button variant="contained" color="secondary" onClick={()=>onClick(item)}>Delete</Button>
                         </Box>
                     }
                 </CardActions>

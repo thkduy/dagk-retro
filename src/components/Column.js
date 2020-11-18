@@ -7,7 +7,7 @@ import {
 import AddIcon from '@material-ui/icons/Add';
 import Card from './Card';
 export default function Column({name,columnData}) {
-    const [cardArray, setCardArray] = useState(columnData.cards);
+    const [cardArray, setCardArray] = useState(columnData.cards ? columnData.cards : []);
     const handleAddCard = () => {
         let newCard = {};
         newCard['content'] = "";
@@ -17,15 +17,32 @@ export default function Column({name,columnData}) {
         setCardArray(newCardArray);
     }
 
-    // const handleDeleteCard = (item) => {
-    //     console.log(item.content);
-    //     // let array = Array.from(cardArray);
-    //     // const index = array.indexOf(item);
-    //     // // if (index > -1) {
-    //     // //     array.splice(index, 1);
-    //     // // }
-    //     // setCardArray(array);
-    // };
+    const handleDeleteCard = async (item) => {
+        //alert(item.content);
+        const options = {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            redirect: 'follow',
+            referrer: 'no-referrer',
+            body: JSON.stringify({ idColumn: columnData._id, idCard: item._id }),
+        }
+
+        const res = await fetch(`http://localhost:3001/deleteCard`, options);
+        if(res.ok){
+            let array = Array.from(cardArray);
+            const index = array.indexOf(item);
+            if (index > -1) {
+                array.splice(index, 1);
+            }
+            setCardArray(array);
+        }
+        
+    };
     return(
         <Grid container item direction="column" xs spacing={1}>
             <Grid item>
@@ -43,7 +60,7 @@ export default function Column({name,columnData}) {
             </Grid>
             {cardArray.map((item,pos)=>{
                 return(
-                    <Card key={pos} item={item} idCol={columnData._id}/>
+                    <Card key={pos} item={item} idCol={columnData._id} onClick={(item) => handleDeleteCard(item)} />
                 );
             })}
         </Grid>

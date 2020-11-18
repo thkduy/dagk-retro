@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Board({boardData}) {
+export default function Board({boardData, onClick}) {
   const history = useHistory();
   const classes = useStyles();
   let cardTotal = 0;
@@ -35,9 +35,6 @@ export default function Board({boardData}) {
     });
   }
 
-  const handleDelete = () => {
-
-  }
   return (
     <Card className={classes.root}>
       <CardHeader style={{ paddingBottom: 5 }} title={boardData.name} />
@@ -59,7 +56,7 @@ export default function Board({boardData}) {
       <Grid container spacing={2}>
         <Grid item xs={4}>
         <Button 
-          onClick={handleDelete}
+          onClick={()=>onClick(boardData)}
           variant="contained" 
           color="secondary" 
           fullWidth>

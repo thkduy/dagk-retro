@@ -14,13 +14,14 @@ import EditIcon from '@material-ui/icons/Edit';
 
 import Column from './Column';
 import Loading from '../components/loading.js';
+import Swal from 'sweetalert2';
 
 export default function Board() {
     const location = useLocation();
     const [isLoaded, setIsLoaded] = useState(location.boardData? true : false);
     const [boardData, setBoardData] = useState(location.boardData);
     const { id } = useParams();
-
+    const domain = "http://localhost:3000";
     //if boardData undefine (click link share)
     useEffect(()=>{
         async function fetchData(){
@@ -46,6 +47,13 @@ export default function Board() {
     const [isEditName,setIsEditName] = useState(false);
     const handleEdit = () => {
         setIsEditName(true);
+    }
+
+    const handleShare = async () => {
+        await Swal.fire({
+            title: 'To invite people to your board, simply send them the following URL:',
+            text: domain + location.pathname,
+          })
     }
 
     const handleSaveName = async () => {
@@ -125,7 +133,7 @@ export default function Board() {
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Button variant="contained" color="primary">Share</Button>
+                            <Button variant="contained" color="primary" onClick={handleShare}>Share</Button>
                         </Grid>
                     </Grid>
                     <Column key={0} name="Went Well" columnData={boardData.column[0]}/>
