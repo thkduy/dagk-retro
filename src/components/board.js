@@ -21,7 +21,7 @@ export default function Board() {
     const [isLoaded, setIsLoaded] = useState(location.boardData? true : false);
     const [boardData, setBoardData] = useState(location.boardData);
     const { id } = useParams();
-    const domain = "https://dagk-fastretro.herokuapp.com";
+    const domain = "https://fastretro.herokuapp.com";
     //if boardData undefine (click link share)
     useEffect(()=>{
         async function fetchData(){

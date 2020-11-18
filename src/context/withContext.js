@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AuthUserContext from "./context.js";
+import AuthUserContext from "./context";
 const UserContext = (props) => {
   let localUser = JSON.parse(localStorage.getItem("user"));
   if (localUser === null) localUser = [];
