@@ -39,7 +39,7 @@ export default function CardItem({item, idCol, onClick}) {
                 body: JSON.stringify({ idColumn: idCol, content: content }),
             }
     
-            const response = await fetch(`https://dagk-retro-api.herokuapp.com/save`, options);
+            const response = await fetch(`http://localhost:3001/save`, options);
             if(response.ok){
                 const res = await response.json();
                 item._id = res.data._id;
@@ -60,7 +60,7 @@ export default function CardItem({item, idCol, onClick}) {
                 body: JSON.stringify({ id: item._id, newContent: content }),
             }
     
-            await fetch(`https://dagk-retro-api.herokuapp.com/editCard`, options);
+            await fetch(`http://localhost:3001/editCard`, options);
         }
         setIsEditName(false);
     }

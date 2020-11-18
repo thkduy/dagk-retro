@@ -1,4 +1,5 @@
 import {React, useState, useContext } from "react";
+import {useHistory} from "react-router-dom";
 import authUserContext  from '../context/context';
 import Swal from 'sweetalert2';
 import jwt from "jsonwebtoken";
@@ -23,6 +24,7 @@ export default function Register(){
     } = useContext(authUserContext);
     const context = useContext(authUserContext);
     const user = context.user;
+    const history = useHistory();
     const [isEditName,setIsEditName] = useState(false);
     const [isEditEmail,setIsEditEmail] = useState(false);
     const [error, setError] = useState('');
@@ -68,7 +70,7 @@ export default function Register(){
             }),
         }
 
-        const response = await fetch(`https://dagk-retro-api.herokuapp.com/auth/edit`, options);
+        const response = await fetch(`http://localhost:3001/auth/edit`, options);
         const res = await response.json();
         if(response.ok){
             const user = jwt.decode(res.token);

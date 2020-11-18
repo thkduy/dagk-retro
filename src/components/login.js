@@ -67,7 +67,7 @@ export default function Login(){
             body: JSON.stringify({ username: username, password: values.password }),
         }
 
-        const response = await fetch(`https://dagk-retro-api.herokuapp.com/auth/login`, options);
+        const response = await fetch(`http://localhost:3001/auth/login`, options);
         const res = await response.json();
         if(response.ok){
             const user = jwt.decode(res.token);

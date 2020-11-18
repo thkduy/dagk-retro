@@ -32,7 +32,7 @@ export default function Column({name,columnData}) {
             body: JSON.stringify({ idColumn: columnData._id, idCard: item._id }),
         }
 
-        const res = await fetch(`https://dagk-retro-api.herokuapp.com/deleteCard`, options);
+        const res = await fetch(`http://localhost:3001/deleteCard`, options);
         if(res.ok){
             let array = Array.from(cardArray);
             const index = array.indexOf(item);
