@@ -1,6 +1,9 @@
 {
   "name": "dagk-retro",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.x"
+  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
