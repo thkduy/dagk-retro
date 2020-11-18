@@ -8,7 +8,7 @@ import {
     Container,
     Typography
 } from '@material-ui/core';
-import Loading from '../components/Loading.js';
+import Loading from '../components/loading.js';
 import Swal from 'sweetalert2';
 
 export default function DashBoard() {
