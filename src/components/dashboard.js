@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {useHistory} from "react-router-dom";
 import Board from './BoardItem.js';
-import authUserContext  from '../context/context';
+import authUserContext  from '../context/context.js';
 import {
     Grid,
     Button,

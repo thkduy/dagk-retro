@@ -5,7 +5,7 @@ import {
     Button,
 } from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
-import Card from './Card';
+import Card from './Card.js';
 export default function Column({name,columnData}) {
     const [cardArray, setCardArray] = useState(columnData.cards ? columnData.cards : []);
     const handleAddCard = () => {

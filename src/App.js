@@ -5,23 +5,21 @@ import {
     Route
 } from "react-router-dom";
 
-import ContextProvider from './context/withContext';
+import ContextProvider from './context/withContext.js';
 
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard.js';
 
-import Home from './components/Home';
+import Home from './components/Home.js';
 
-import Login from './components/Login';
+import Login from './components/Login.js';
 
-import Register from './components/Register';
+import Register from './components/Register.js';
 
-import PublicBoard from './components/PublicBoard';
+import MenuAppBar from './components/AppBar.js';
 
-import MenuAppBar from './components/AppBar';
+import Board from './components/Board.js';
 
-import Board from './components/Board';
-
-import Profile from './components/Profile';
+import Profile from './components/Profile.js';
 
 export default function App() {
     return (
@@ -34,7 +32,6 @@ export default function App() {
                         <Route path="/dashboard" component={Dashboard} />
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
-                        <Route path="/publicboard" component={PublicBoard} />
                         <Route path="/board/:id" component={Board} />
                         <Route path="/profile" component={Profile} />
                     </Switch>
