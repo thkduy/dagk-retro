@@ -2,8 +2,7 @@
   "name": "dagk-retro",
   "version": "0.1.0",
   "engines": {
-    "npm": "6.9.0",
-    "node": "10.16.3"
+    "node": "12.x"
   },
   "private": true,
   "dependencies": {
